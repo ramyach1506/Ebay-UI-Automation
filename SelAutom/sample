@@ -1,0 +1,27 @@
+// SampleTest.java
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SampleTest {
+       public static void main(String[] args) throws Exception {
+           System.setProperty("webdriver.chrome.driver", "C:\webdriver\chromedriver.exe");
+           WebDriver driver = new ChromeDriver();
+
+        XPathRepository repo = new XPathRepository("ObjectProperties/Login.properties");
+
+        // Example: Automate login
+        WebElement username = driver.findElement(By.xpath(repo.getXpath("Username")));
+        WebElement password = driver.findElement(By.xpath(repo.getXpath("Password")));
+        WebElement loginBtn = driver.findElement(By.xpath(repo.getXpath("LoginButton")));
+
+        username.sendKeys("yourUsername");
+        password.sendKeys("yourPassword");
+        loginBtn.click();
+
+        // Add more steps as per your manual test cases
+
+        driver.quit();
+    }
+}
