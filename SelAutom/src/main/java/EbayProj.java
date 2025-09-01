@@ -64,6 +64,6 @@ public class EbayProj {
         System.out.println("Number of items in cart: " + cartIcon.getText());
         Thread.sleep(3000);
 
-        //driver.quit();
+        driver.quit();
     }
 }
